@@ -1,0 +1,102 @@
+8월31일, 9월 1일
+- 프론트엔드 공부를 다짐하고 한 달간 공부한 느낀점 : 유저들에게 직접적으로 보여지는 프론트엔드 개발의
+  특성상 작은 것 하나하나 까지 신경을 써서 제작해야한다고 느낌, 그런 이유로 웹 접근성을 중요시 하는 것 같다.
+
+- 기본적인 HTML 태그들, CSS 선택자, 속성들을 대부분 이해하였고, 그들의 역할은 이해하였지만, 현재 내가 사용하고 있는
+  HTML은 기본적이고, 개발중인 사이트가 단순 탓인지 HTML 작성은 비교적 수월하다. 하지만 CSS 작성시 알고도 원하지 않게 
+  작성되는 경우가 빈번한다.(내 상상속 결과물과 매우다름) 
+
+- 그런 이유로 CSS를 잘못 작성하면, 나중에 힘들다는 이야기가 있다고 한다. CSS을 사용하는 BEM과 같은 방법론이 있다고 한다.
+
+- CSS 작성시 뜻대로 되지않는 어려움들이 있지만, 오랬동안 고민하면 어떻게든 생각한 페이지의 스타일을 적용할 수 있다.
+
+- 개발하는 과정에 대해 공부하였다. (작업 일정 산정, 페이지의 컴포넌트 구조 파악, reset.css & nomalize.css, HTML & CSS 작성)
+
+- 작업일정 = 내가 얼추 예상한 기간 X 3(예외처리시간, 디테일 잡는 시간, 다른 업무도 고려 등등)
+
+- 페이지나 사이트에 어떤 컴포넌트들이 있고, 그 컴포넌트들을 재조립할지 (컴포넌트:페이지를 쪼갤 수 있는 최소의 단위 UI)
+
+- 먼저 하면 좋은 작업 (폰트font-size, font-family, line-heigt, 컬러), header, footer(공통영역)를 먼저 작성 후 main을 작성
+
+- wired.com의 html을 모두 작성해 보았고, w3c의 유효성 컴사도 해보았다. main page의 css를 작성해 보았다.
+
+- main영역의 카드 뉴스들을 각각 float, flexbox 두 가지 방법으로 배치하여 보았다.
+
+- main영역의 넓이를 고혀하여 float배치시 각 카드 뉴스들의 배치를 위해 정확한 px값을 계싼해야했다. 계산한 px값으로
+  각 카드뉴스에 width와 height값을 직접 넣어 줬는데, 이렇게 하나하나 하는게 맞는건가 싶다. flexbox를 사용하여 배치
+  할 때에는 px이아닌 %를 사용하여 카드뉴스을 배치하였다.
+
+- 9월 1일에는  전부터 공부하려고 마음먹고 있던 git공부를 하기로 하였다. 생활 코딩 사이트의 git 강의를 보았다.
+  소스관리에서 git이 중효한 만큰, 배운 내용을 앞으로 프로젝트 진행 시 사용해 보도록 노력해야겠다.
+
+- 오늘 부터 작성하는 TIL(Today I Learn)을 Github의 todayilearn repository에 원격 저장하기로 하였다.
+
+git config global user.name NamkungJun
+git config global user.email sgj19@naver.com
+
+폴더 를 만든뒤 git을 사용하기위해
+git init을 사용 -> .git 폴더가 생성됨
+
+git status : git이 추적하고 있는지 확인
+
+git add 파일명 : 해당 파일에 대한 추적을 시작 -> stage area로 넘어감(commit 대기상태)
+
+git commit -m "commit message" : commit하여 새로운 버전을 생성한다. (1 commit = 1 작업 완료)
+
+git log : commit  log 학인
+
+** 해당 파일은 수정후에는 다시add를 해줘야한다. => 왜 add를 해야하나
+   => 작업을 막 하다가 commit시기를 놓쳐서, 여러 작업된 파일들을 담은 한 버전을 만들어야 할 경우
+      add로 commit하고자 하는 파일만 commit시킬수 있다. (add한 파일만 commit시킴)
+
+** stage : commit 대기상태, repository : commit된 파일
+
+git log (-p) : 변경 사항 확인 -p를 붙이면 코드 확인
+
+git log 버전 id (commit id)
+
+git diff 버저id..버전id
+
+git diff : 작업이후 나의 작업을 commit하기 전에 학인해보기
+
+git reset 버전id --hard : 해단 버전id의 버전으로 돌아가기 (github에 올린이후에 reset을 불가, local에서만)
+
+git reset
+
+git commit -am "commit message": add와 commit message작성을 한번에
+
+**branch
+git branch : branch 목록,  *가 붙은 것이 head 현재 checkout한 bracnh
+
+git branch exp : exp 라는 branch 생성
+
+git checkout exp : exp라는 branch로 이동,  -b를 붙이면 만들면서 이동
+
+git log --branch --decorate --graph --online : branch간의 관계보기
+
+git log -p master..exp : master에는 없지만 exp에는 있는것 보기
+
+git diff master..exp : 코드비교
+
+**merge
+exp -> master하려면 master로 가서 git merge exp -> 합처진 버전생성(commit 생성) 
+
+git branch -d exp : exp 삭제
+
+**주의 사항 : exp와 master에서 이름이같은 파일에서 각자 다른 부분을 수정했고 merge했다면 수정한 내용이 병합됨
+그러나, 같은 부분을 수저하였다면 충돌이 발생 -> both modified: 라고 git이 말해준 -> 수동으로 내가 수정하고 add, commit
+
+**원격저장소 : local이 아닌 다른 장소에 있는 저장소 : 인터넷에 올려서 다른 사람들과 공유하고 협업한다.
+
+1) github에 있는 프로젝트 가져오기
+ fork
+ git clone 원격저장소 주소 나의 디렉토리
+
+2) 나의 원격저장소 만들기
+ github에 repositiry를 만들고 내가 작업한 것들을 업로드하기
+
+ git remote add origin 원격저장소주소 : 현재 나의 local저장소에 원격저장소를 연결시킨다. 그리고 그 원격 저장소의 별명은 origin
+
+ git remote (-v) : remote 확인
+
+ git push -u 별명 현재branch : 현재 checkout되어 있는 local저장소의 branch를 별명에 해당하는 원격저장소로 push한다.
