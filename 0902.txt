@@ -82,3 +82,7 @@
  - img는 margin:0 auto가 안먹혀 -> div의 background로 넣고 margin:0 auto;시켜버려
 
  - margin:0 auto; 말고 text-align: center;로 중앙 정렬
+
+ - positon: relative : 원래 있어야할 위치를 기준으로 이동
+ - positon: absoulute : 조상요소중 positon이 static이 아닌 요소를 기준으로
+   원하는 곳으로 이동시키기
