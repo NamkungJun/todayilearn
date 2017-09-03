@@ -85,4 +85,4 @@
 
  - positon: relative : 원래 있어야할 위치를 기준으로 이동
  - positon: absoulute : 조상요소중 positon이 static이 아닌 요소를 기준으로
-   원하는 곳으로 이동시키기
+   원하는 곳으로 이동
